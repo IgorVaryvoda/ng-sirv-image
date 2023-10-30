@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-// Your custom NgOptimizedImage and IMAGE_LOADER imports
+import { SirvMediaViewerModule } from 'ng-sirv-media-viewer';
 import { NgOptimizedImage, ImageLoaderConfig, IMAGE_LOADER } from '@angular/common';
 
 @NgModule({
@@ -13,7 +12,8 @@ import { NgOptimizedImage, ImageLoaderConfig, IMAGE_LOADER } from '@angular/comm
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgOptimizedImage  // Assuming NgOptimizedImage is a module
+    NgOptimizedImage,
+    SirvMediaViewerModule
   ],
   providers: [
     {
@@ -36,3 +36,4 @@ function createSirvUrl(path: string, config: ImageLoaderConfig) {
   }
   return url.href;
 }
+
